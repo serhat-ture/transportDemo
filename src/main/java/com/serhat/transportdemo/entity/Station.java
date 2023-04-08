@@ -13,7 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "stations")
+@Table(name = "station")
 public class Station {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class Station {
     private String location;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-   @JoinTable( name = "routeee_stationss",
-           joinColumns=  {@JoinColumn(name = "stations_id",referencedColumnName = "id")} ,
-         inverseJoinColumns = {@JoinColumn(name = "routes_id",referencedColumnName = "id")})
-    private Set<Route> routes = new HashSet<>();
+   @JoinTable( name = "route_stations",
+           joinColumns=  {@JoinColumn(name = "station_id",referencedColumnName = "id")} ,
+         inverseJoinColumns = {@JoinColumn(name = "route_id",referencedColumnName = "id")})
+    private Set<Route> route = new HashSet<>();
 
 
 }

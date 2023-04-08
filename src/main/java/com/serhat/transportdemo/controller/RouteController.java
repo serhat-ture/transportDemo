@@ -20,23 +20,26 @@ public class RouteController {
     }
 
 
-    //@PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping()
     public ResponseEntity<RouteDto> createRoute(@RequestBody RouteDto routeDto) {
         RouteDto routeResponse = routeService.createRoute(routeDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(routeResponse);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
     @GetMapping()
     public List<RouteDto> getAllRoutes() {
         return routeService.getAllRoutes();
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
     @GetMapping("/{id}")
     public ResponseEntity<RouteDto> getRouteById(@PathVariable(name = "id") long id) {
         return ResponseEntity.ok(routeService.getRouteById(id));
     }
-    //@PreAuthorize("hasRole('ADMIN')")
+
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<RouteDto> updateRoute(@RequestBody RouteDto routeDto, @PathVariable(name = "id") long id) {
         RouteDto routeResponse = routeService.updateRoute(routeDto, id);
@@ -44,15 +47,14 @@ public class RouteController {
         return ResponseEntity.status(HttpStatus.OK).body(routeResponse);
 
     }
-    //@PreAuthorize("hasRole('ADMIN')")
+
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity deleteRoute(@PathVariable(name = "id") Long id) {
         routeService.deleteRoute(id);
         return ResponseEntity.status(HttpStatus.OK).body("Route deleted successfully");
 
     }
-
-
 
 
 }

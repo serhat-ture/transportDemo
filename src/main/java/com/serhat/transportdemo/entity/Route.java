@@ -22,7 +22,7 @@ In this implementation, we have three entities:
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "routes")
+@Table(name = "route")
 public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,12 +32,8 @@ public class Route {
     private String destination;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "routes")
-    private Set<Station> stations = new HashSet<>();
-
-
-
-
+    @ManyToMany(mappedBy = "route")
+    private Set<Station> station = new HashSet<>();
 
 
 
