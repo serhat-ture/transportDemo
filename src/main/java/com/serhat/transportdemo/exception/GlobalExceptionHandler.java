@@ -1,5 +1,6 @@
 package com.serhat.transportdemo.exception;
 
+import com.serhat.transportdemo.payload.ErrorDetails;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

@@ -1,4 +1,4 @@
-package com.serhat.transportdemo.exception;
+package com.serhat.transportdemo.payload;
 
 import java.util.Date;
 
