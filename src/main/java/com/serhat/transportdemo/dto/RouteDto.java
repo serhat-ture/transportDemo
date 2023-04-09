@@ -11,6 +11,6 @@ public class RouteDto {
     private String name;
     private String source;
     private String destination;
-//  private Set<Station> stations;
-   private Set<Vehicle> vehicles ;
+ private Set<Station> stations;
+  // private Set<Vehicle> vehicles ;
 }

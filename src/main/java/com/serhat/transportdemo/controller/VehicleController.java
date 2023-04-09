@@ -27,14 +27,14 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.createVehicle(routeId, vehicleDto), HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
+
     @GetMapping("/routes/{routeId}/vehicles")
     public List<VehicleDto> getVehiclesByRouteId(@PathVariable(value = "routeId") Long routeId) {
         return vehicleService.getVehiclesByRouteId(routeId);
 
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
+
     @GetMapping("/routes/{routeId}/vehicles/{id}")
     public ResponseEntity<VehicleDto> getVehicleById(@PathVariable(value = "routeId") Long routeId,
                                                      @PathVariable(value = "id") Long vehicleId) {

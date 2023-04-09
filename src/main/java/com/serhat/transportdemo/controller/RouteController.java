@@ -27,13 +27,13 @@ public class RouteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(routeResponse);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
+
     @GetMapping()
     public List<RouteDto> getAllRoutes() {
         return routeService.getAllRoutes();
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')")
+
     @GetMapping("/{id}")
     public ResponseEntity<RouteDto> getRouteById(@PathVariable(name = "id") long id) {
         return ResponseEntity.ok(routeService.getRouteById(id));

@@ -11,10 +11,13 @@ import com.serhat.transportdemo.service.RouteService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Service
 public class RouteServiceImpl implements RouteService {
+    static Logger log = Logger.getLogger(RouteServiceImpl.class.getName());
+
 
     private RouteRepository routeRepository;
     private RouteMapper routeMapper;
