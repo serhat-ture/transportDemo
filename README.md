@@ -9,12 +9,11 @@
 
 
 
-The admin determines in which city the events will take place.\
 Admin is authorized  all request.\
 Regular user can create just vehicle.\
 Each route may have multiple stations and vehicles.
 
-smart1 and smart2 are standard user that they can read all data and add vehicles, but have no authority to add/delete/update new route.
+ 'smart' is standard user that they can read all data and add vehicles, but have no authority to add/delete/update new route.
 
 ## Technologies
 
@@ -41,8 +40,8 @@ Java 17, Spring Boot 3, Spring Security 6, JWT, PostgreSQL, Lombok, Spring Data 
 | Username | Password |
 |----------|----------|
 | admin    | admin    |
-| smart1   | smart1   |
-| smart2   | smart2   |
+| smart    | smart  |
+
 
 
 
@@ -52,10 +51,10 @@ Java 17, Spring Boot 3, Spring Security 6, JWT, PostgreSQL, Lombok, Spring Data 
 
 ```
 {
-    "name":"smart1",
-    "username":"smart1",
+    "name":"smart",
+    "username":"smart",
     "email":"smart1@gmail.com",
-    "password":"smart1"
+    "password":"smart"
 }
 ```
 
@@ -65,7 +64,13 @@ Java 17, Spring Boot 3, Spring Security 6, JWT, PostgreSQL, Lombok, Spring Data 
 
 ```
 {
-    "usernameOrEmail":"smart1@gmail.com",
-    "password":"smart1"
+    "usernameOrEmail":"admin@gmail.com",
+    "password":"admin"
 }
 ```
+
+<img width="1193" alt="Screenshot 2023-04-10 at 09 15 15" src="https://user-images.githubusercontent.com/67038603/230839374-e9996ab8-3f98-41f3-addc-d66175828a7e.png">
+
+
+
+
